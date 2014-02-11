@@ -39,3 +39,35 @@ The speed of this is 2n where n is the length of the string. In Big O notation t
 	var_dump(findDuplicates($string));
 
 ?>
+
+Uncommented version: 
+
+<?php 
+
+	function findDuplicates($string)
+	{
+		if(strlen($string) == 0) break;
+		
+		$lettersInString = []; 
+		$duplicates = []; 
+		
+		for($i=0; $i<strlen($string); $i++)
+		{ 
+			$letter = $string[$i];
+			$lettersInString[$letter] = 0; 
+		}
+
+		for($i=0; $i<strlen($string); $i++)
+		{
+			$letter = $string[$i];
+			$lettersInString[$letter]++;
+
+			if($lettersInString[$letter] == 2) $duplicates[] = $string[$i];
+		}
+		return $duplicates;
+	}
+
+	$string = 'mississippi';
+	var_dump(findDuplicates($string));
+	
+?>
