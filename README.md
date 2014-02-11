@@ -30,7 +30,7 @@ The speed of this is 2n where n is the length of the string. In Big O notation t
 			$lettersInString[$letter]++;
 
 			// if a letter in $lettersInString has been incremented twice that means it was found 2 times and therefore that letter belongs in the duplicate array
-			if($lettersInString[$letter] == 2) $duplicates[] = $string[$i];
+			if($lettersInString[$letter] == 2) $duplicates[] = $letter;
 		}
 		return $duplicates;
 	}
@@ -62,7 +62,7 @@ Uncommented version:
 			$letter = $string[$i];
 			$lettersInString[$letter]++;
 
-			if($lettersInString[$letter] == 2) $duplicates[] = $string[$i];
+			if($lettersInString[$letter] == 2) $duplicates[] = $letter;
 		}
 		return $duplicates;
 	}
